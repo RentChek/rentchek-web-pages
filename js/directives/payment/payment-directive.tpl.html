@@ -1,0 +1,67 @@
+<div>
+	<ul ng-if="properties.length" class="properties">
+		<li ng-repeat="property in properties">
+			<div class="flex-top">
+				<div class="begin">
+					<div class="map map-mini">
+						<property-map property="property" size="192"></property-map>
+					</div>
+				</div>
+
+				<div class="middle">
+					<div class="title">
+						<span class="label">{{property.label}}</span>
+						<span class="address">{{property.address}}</span>
+					</div>
+					<div class="details">
+						<div class="transaction" ng-repeat="receipt in propertyPayment[property._id].receipts">
+							<span class="positive">{{receipt.amount | shortCurrency}}</span> from <a ng-href="{{APP_API}}/receipt/{{receipt._id}}" target="_blank" class="description">{{receipt.tenant.name}}</a><span class="long"> on <a ng-href="{{APP_API}}/receipt/{{receipt._id}}" target="_blank">{{receipt.created | moment:'MMM D, YYYY'}}</a></span>
+						</div>
+					</div>
+				</div>
+
+				<div class="end">
+					<div class="rent" ng-class="{vacant: !propertyPayment[property._id].wasRentedBy}">
+						<span ng-show="propertyPayment[property._id].balance">{{propertyPayment[property._id].balance | shortCurrency}}</span>
+					</div>
+					<div class="labels">
+						<span class="taglabel warning" ng-show="!propertyPayment[property._id].wasRentedBy">vacant</span>
+						<span class="taglabel warning" ng-show="propertyPayment[property._id].wasRentedBy && propertyPayment[property._id].balance && paymentDay == currentDay">due</span>
+						<span class="taglabel error" ng-show="propertyPayment[property._id].wasRentedBy && propertyPayment[property._id].balance && paymentDay < currentDay">late</span>
+						<span class="taglabel success" ng-show="!propertyPayment[property._id].balance" >paid</span>
+					</div>
+					<div class="actions">
+						<a class="tagbtn" ng-if="!newReceipts[property._id] && propertyPayment[property._id].wasRentedBy && propertyPayment[property._id].balance" ng-click="toggleReceipt(property)">Receipt</a>
+						<a class="tagbtn" ng-if="newReceipts[property._id]" ng-click="toggleReceipt(property)">Cancel</a>
+					</div>
+				</div>
+			</div>
+
+			<form ng-show="newReceipts[property._id]" ng-submit="pay(property, payment)">
+				<div class="alert error" ng-repeat="error in errors.newReceipts[property._id]">{{error}}</div>
+
+				<div class="field">
+					<input ng-model="newReceipts[property._id].amount" placeholder="Amount" type="number" step="any" min="0">
+					<span class="taglabel error">required</span>
+				</div>
+
+				<div class="alert warning">
+					<span ng-show="newReceipts[property._id].send">A receipt will be emailed to {{propertyPayment[property._id].wasRentedBy.name}}<span ng-show="newReceipts[property._id].amount"> for {{newReceipts[property._id].amount | shortCurrency}}</span>.</span>
+					<span ng-hide="newReceipts[property._id].send">No receipt will be emailed to {{propertyPayment[property._id].wasRentedBy.name}}.</span>
+				</div>
+
+				<div class="flex-controls">
+					<div class="options">
+						<switch checked-label="Email Receipt" unchecked-label="Don't Email Receipt" ng-model="newReceipts[property._id].send"></switch>
+					</div>
+					<div class="actions">
+						<input ng-show="newReceipts[property._id].send" class="bigbtn" type="button" value="Preview" ng-disabled="loading" ng-click="preview(property)">
+						<input class="bigbtn save" type="submit" value="Save" ng-disabled="loading">
+					</div>
+				</div>
+			</form>
+		</li>
+	</ul>
+
+	<div ng-if="!properties.length" class="alert warning">You don't have any properties added yet. Try <a ng-href="/app/#!/properties/create">creating one</a>.</div>
+</div>

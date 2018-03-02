@@ -1,0 +1,17 @@
+<div>
+	<section class="container">
+		<h3><span>Reset</span></h3>
+		
+		<div class="alert success" ng-show="saved">Your new password is set. Try <a href="/app/#!/login">logging in</a> using it!</div>
+		<div class="alert error" ng-repeat="error in errors">{{error}}</div>
+		
+		<form ng-hide="saved" ng-submit="reset()">
+			<input ng-model="user.password" placeholder="New Password" name="password" type="password" autocomplete="off" />
+			
+			<div class="actions">
+				<a href="/app/#!/login">Nevermind, I remember now!</a>
+				<input class="bigbtn" type="submit" value="Save" ng-disabled="loading" />
+			</div>
+		</form>
+	</section>
+</div>

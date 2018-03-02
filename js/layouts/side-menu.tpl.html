@@ -1,0 +1,27 @@
+<div class="layout-side-menu">
+	<div ng-add-to-home-screen></div>
+	
+	<div class="wrapper">
+		<div class="pure-g">
+			<div class="pure-u-md-1-24"></div>
+			
+			<div class="pure-u-1 pure-u-md-4-24 pure-hidden-xs pure-hidden-sm">
+				<menu class="lg"></menu>
+			</div>
+			
+			<div class="pure-u-md-1-24"></div>
+			
+			<div class="pure-u-1 pure-u-md-17-24">
+				<section class="container">
+					<ng-view autoscroll="true"></ng-view>
+				</section>
+				
+				<share-footer></share-footer>
+			</div>
+			
+			<div class="pure-u-md-1-24"></div>
+		</div>
+	</div>
+	
+	<menu class="sm pure-hidden-md pure-hidden-lg pure-hidden-xl"></menu>
+</div>

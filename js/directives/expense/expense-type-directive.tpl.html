@@ -1,0 +1,23 @@
+<div>
+	<div class="select-option">
+		<loading-indicator active="loading"></loading-indicator>
+		
+		<div class="alert error" ng-repeat="error in errors">{{error}}</div>
+		
+		<div class="select-options">
+			<div ng-repeat="expenseType in expenseTypes" ng-click="setType(expenseType)" ng-class="{selected: type == expenseType}">
+				<div class="title">{{expenseType}}</div>
+				<i class="icon flaticon-correct7"></i>
+			</div>
+			<div ng-if="type && expenseTypes.indexOf(type) < 0" ng-class="{selected: type && expenseTypes.indexOf(type) < 0}">
+				<div class="title">{{type}}</div>
+				<i class="icon flaticon-correct7"></i>
+			</div>
+		</div>
+	</div>
+	
+	<div class="field">
+		<input type="text" name="name" placeholder="Category" ng-model="type">
+		<span class="taglabel error">required</span>
+	</div>
+</div>

@@ -1,0 +1,14 @@
+<div>
+	<loading-indicator active="loading"></loading-indicator>
+	
+	<div class="alert error" ng-repeat="error in errors">{{error}}</div>
+	
+	<div ng-if="!loading && properties.length && !errors.length && (expenses.length || payments.length)">
+		<canvas class="chart chart-line" data="line.data" labels="line.months" legend="true" series="propertyLabels" options="line.options"></canvas>
+		<canvas class="chart chart-doughnut" data="pie.data" labels="propertyLabels"></canvas>
+	</div>
+	
+	<div ng-if="!loading && properties.length && !expenses.length && !payments.length" class="alert warning">
+		I would show you some pretty graphs here, but you haven't recorded any receipts or expenses for {{year}} yet.
+	</div>
+</div>

@@ -1,0 +1,20 @@
+<h3><span>Properties</span></h3>
+
+<div ng-if="!loading">
+	<ul ng-if="properties.length" class="properties">
+		<li ng-repeat="property in properties">
+			<property property="property" actions="true"></property>
+		</li>
+	</ul>
+	
+	<div ng-if="!properties.length" class="alert warning">You don't have any properties added yet. Try <a ng-click="toggleCreateProperty()">creating one</a>.</div>
+</div>
+
+<loading-indicator active="loading"></loading-indicator>
+
+<a class="bigbtn full" ng-click="toggleCreateProperty()">
+	<span ng-if="!newProperty">Add Property</span>
+	<span ng-if="newProperty">Cancel</span>
+</a>
+
+<create-property ng-if="newProperty"></create-property>

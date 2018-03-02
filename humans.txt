@@ -1,0 +1,40 @@
+# humanstxt.org
+# The humans responsible & technology colophon
+
+# TEAM
+	
+	Chesley -- Sole Owner & Developer -- @Chesley
+
+# TECHNOLOGY COLOPHON
+	
+	HTML5, CSS3
+	Normalize, HTML5 Boilerplate
+	AngularJS
+	NodeJS
+	MongoDB
+	SASS
+	GruntJS
+	npm
+
+# THANKS
+	
+	Icons made by Freepik from www.flaticon.com
+	@iqonicdesign http://iqonicdesign.com/ui
+	@ahmetsulek http://flatuicolors.com
+	@uptimerobot http://uptimerobot.com
+	@digitalocean http://digitalocean.com
+	@UserVoice http://rentchek.uservoice.com
+	@googleanalytics http://www.google.ca/analytics
+	@bitbucket http://bitbucket.org
+	@github http://github.com
+	@dployio http://dploy.io
+	@stripe http://stripe.com
+	http://www.chartjs.org
+	https://stocksnap.io
+
+# SPECIAL THANKS
+	
+	Tiffany White @Tiffanywhite21
+	Donal Mac An Ri @donalmacanri
+	Julie Fitzpatrick @juliefitz
+	Jared Perry @jared_perry

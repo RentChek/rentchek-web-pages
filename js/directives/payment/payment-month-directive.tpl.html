@@ -1,0 +1,27 @@
+<div>
+	<div class="flex-top">
+		<div class="begin">
+			<div class="month">
+				<div class="long">{{payment.date | moment:'MMMM YYYY'}}</div>
+				<div class="short">{{payment.date | moment:'MMM YYYY'}}</div>
+			</div>
+		</div>
+		<div class="end">
+			<div class="rent rent-header">
+				<span ng-if="monthlyCurrentBalance">{{monthlyCurrentBalance | shortCurrency}}</span>
+				<span ng-if="allPaid" class="positive">{{monthlyActualIncome | shortCurrency}}</span>
+			</div>
+			<div class="due">
+				<span ng-if="dueToday" class="taglabel warning">due today</span>
+				<span ng-if="late" class="taglabel error">late by {{daysUntilPaymentDate}} day<span ng-if="daysUntilPaymentDate != 1">s</span></span>
+				<span ng-if="dueSoon" class="taglabel warning">due in {{daysUntilPaymentDate}} day<span ng-if="daysUntilPaymentDate != 1">s</span></span>
+				<span ng-if="allPaid" class="taglabel success">all paid</span>
+				<span ng-if="allVacant" class="taglabel warning">all vacant</span>
+			</div>
+		</div>
+	</div>
+
+	<a ng-if="!showProperties" class="show-properties flaticon-expand22" ng-click="toggleProperties()"></a>
+
+	<payment ng-if="showProperties" payment="payment" properties="properties"></payment>
+</div>

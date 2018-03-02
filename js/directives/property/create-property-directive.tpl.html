@@ -1,0 +1,36 @@
+<form ng-submit="createProperty()">
+	<div class="alert error" ng-repeat="error in errors.newProperty">{{error}}</div>
+	
+	<div class="field">
+		<input ng-model="newProperty.rent" placeholder="Rent" type="number" step="any" min="0">
+		<span class="taglabel error">required</span>
+	</div>
+	<div class="field">
+		<input ng-model="newProperty.optional" placeholder="Label" type="text">
+		<span class="taglabel warning">optional</span>
+	</div>
+	<div class="field">
+		<input ng-model="newProperty.address" placeholder="Address" type="text">
+		<span class="taglabel error">required</span>
+	</div>
+	<div class="field">
+		<input ng-model="newProperty.city" placeholder="City" type="text">
+		<span class="taglabel error">required</span>
+	</div>
+	<div class="field">
+		<input ng-model="newProperty.province" placeholder="Province or State" type="text">
+		<span class="taglabel warning">optional</span>
+	</div>
+	<div class="field">
+		<input ng-model="newProperty.country" placeholder="Country" type="text">
+		<span class="taglabel error">required</span>
+	</div>
+	<div class="field">
+		<input ng-model="newProperty.postal" placeholder="Postal" type="text">
+		<span class="taglabel warning">optional</span>
+	</div>
+	
+	<div class="actions">
+		<input class="bigbtn save" type="submit" value="Save" ng-disabled="loading">
+	</div>
+</form>

@@ -1,0 +1,14 @@
+<form ng-submit="vacate()">
+	<div class="alert error" ng-repeat="error in errors">{{error}}</div>
+
+	<div class="field">
+		<input date="end" placeholder="Moving Out Date" type="text" pikaday="monthPickerConfig" readonly value="{{end | moment:'MMMM D, YYYY'}}">
+		<span class="taglabel error">required</span>
+	</div>
+
+	<div class="flex-controls">
+		<div class="actions">
+			<input class="bigbtn save" type="submit" value="Save" ng-disabled="loading">
+		</div>
+	</div>
+</form>

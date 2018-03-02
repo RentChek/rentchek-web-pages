@@ -1,0 +1,27 @@
+<div class="timeline">
+	<a class="next-year bigbtn full" ng-href="/app/#!/{{type}}/{{nextYear}}">
+		<span class="flaticon-collapse3"></span>
+		<span class="year">{{nextYear}}</span>
+	</a>
+	
+	<div ng-if="!loading">
+		<ul ng-if="!errors.length" class="payments">
+			<li ng-if="maximumMonth !== null && maximumMonth < 12 && payments.length != 12">
+				<a class="add-month" ng-click="addMonth()">Show {{nextMonth | moment:'MMMM YYYY'}}</a>
+			</li>
+			<li ng-repeat="payment in payments">
+				<payment-month ng-if="type == 'receipts'" payment="payment" properties="properties"></payment-month>
+				<expense-month ng-if="type == 'expenses'" payment="payment" properties="properties"></expense-month>
+			</li>
+		</ul>
+		
+		<div class="alert error" ng-repeat="error in errors">{{error}}</div>
+	</div>
+	
+	<loading-indicator active="loading"></loading-indicator>
+	
+	<a ng-if="prevYear > minYear" class="prev-year bigbtn full" ng-href="/app/#!/{{type}}/{{prevYear}}">
+		<span class="year">{{prevYear}}</span>
+		<span class="flaticon-expand22"></span>
+	</a>
+</div>

@@ -1,0 +1,43 @@
+<div>
+	<div class="flex-top">
+		<div class="begin">
+			<div class="month">
+				<div class="long">{{payment.date | moment:'MMMM YYYY'}}</div>
+				<div class="short">{{payment.date | moment:'MMM YYYY'}}</div>
+			</div>
+		</div>
+		<div class="end">
+			<div class="due" ng-if="!propertiesInPayment.length">
+				<span class="taglabel warning">no properties</span>
+			</div>
+		</div>
+	</div>
+	<ul class="properties">
+		<li ng-repeat="property in propertiesInPayment">
+			<div class="flex-top">
+				<div class="begin">
+					<div class="map map-mini">
+						<property-map property="property" size="192"></property-map>
+					</div>
+				</div>
+				<div class="middle">
+					<div class="title">
+						<span class="label">{{property.label}}</span>
+						<span class="address">{{property.address}}</span>
+					</div>
+					<div class="details">
+						<expense-list property="property" payment="propertyPayment[property._id]"></expense-list>
+					</div>
+				</div>
+				<div class="end">
+					<div class="actions">
+						<a class="tagbtn" ng-if="!newExpenses[property._id]" ng-click="toggleExpense(property)">Expense</a>
+						<a class="tagbtn" ng-if="newExpenses[property._id]" ng-click="toggleExpense(property)">Cancel</a>
+					</div>
+				</div>
+			</div>
+
+			<expense ng-if="newExpenses[property._id]" property="property" date="payment.date"></expense>
+		</li>
+	</ul>
+</div>

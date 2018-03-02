@@ -1,0 +1,18 @@
+<div>
+	<section class="container">
+		<h3><span>Login</span></h3>
+		
+		<div class="alert error" ng-repeat="error in errors">{{error}}</div>
+		
+		<form autofill-submit="login()" action="/savepasswordprompt" target="savepasswordprompt" method="post">
+			<input autofill ng-model="user.username" placeholder="Email" name="username" type="email" />
+			<input autofill ng-model="user.password" placeholder="Password" name="password" type="password" />
+			<div class="actions">
+				<a href="/app/#!/forgot">Forgot Password?</a>
+				<a href="/app/#!/signup">Not a member yet?</a>
+				<input class="bigbtn" type="submit" value="Login" ng-disabled="loading" />
+			</div>
+		</form>
+		<iframe name="savepasswordprompt"></iframe>
+	</section>
+</div>

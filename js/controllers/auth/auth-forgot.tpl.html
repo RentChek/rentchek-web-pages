@@ -1,0 +1,20 @@
+<div>
+	<section class="container">
+		<h3><span>Forgot</span></h3>
+		
+		<div class="alert" ng-class="{warning: status >= 200 && status < 300}">Alright, I just sent you an email. Just click the link in it!</div>
+		<div class="alert" ng-class="{error: status && !(status >= 200 && status < 300)}">Sorry, I'm not finding that email in my databanks.</div>
+		
+		<form ng-hide="status >= 200 && status < 300" autofill-submit="forgot()">
+			<div class="field">
+				<input autofill ng-model="user.email" placeholder="Email" type="email" />
+				<span class="taglabel error">required</span>
+			</div>
+			
+			<div class="actions">
+				<a href="/app/#!/login">Nevermind, I remember now!</a>
+				<input class="bigbtn" type="submit" value="Reset" ng-disabled="loading" />
+			</div>
+		</form>
+	</section>
+</div>

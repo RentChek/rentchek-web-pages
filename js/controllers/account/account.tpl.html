@@ -1,0 +1,27 @@
+<div>
+	<div>
+		<h3><span>Account</span></h3>
+		
+		<loading-indicator active="loading"></loading-indicator>
+		
+		<div class="alert" ng-class="{success: saved}">Your account was updated without a hitch!</div>
+		<div class="alert error" ng-repeat="error in errors">{{error}}</div>
+		
+		<form ng-if="!loading" ng-submit="editAccount()">
+			<input ng-model="editUser.name" ng-readonly="saved" placeholder="Name" type="text" />
+			<input ng-model="editUser.email" ng-readonly="saved" placeholder="Email" type="email" />
+			<input ng-model="editUser.password" ng-readonly="saved" placeholder="New Password" type="password" autocomplete="off" />
+			<input ng-model="editUser.currency" ng-readonly="saved" placeholder="Currency" type="text" maxlength="1" />
+			
+			<div class="actions">
+				<input ng-hide="saved" class="bigbtn save" type="submit" value="Save" ng-disabled="saving" />
+				<a ng-show="saved" class="bigbtn" href="/app/#!/">Done</a>
+			</div>
+		</form>
+	</div>
+	
+	<div class="controls">
+		<a uservoice-trigger identify="uservoiceIdentify" mode="contact" position="top" class="tagbtn">Feedback</a>
+		<a ng-click="logout()" class="tagbtn">Logout</a>
+	</div>
+</div>

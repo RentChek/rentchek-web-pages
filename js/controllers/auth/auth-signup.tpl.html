@@ -1,0 +1,42 @@
+<div>
+	<section class="container">
+		<h3><span>Sign Up</span></h3>
+		
+		<div class="alert" ng-class="{success: signupCompleted}">You did it! Now you just need to <a href="/app/#!/login">login</a>.</div>
+		<div class="alert" ng-class="{error: status == 409}">That email has already been used. Maybe just <a href="/app/#!/login">try logging in</a>?</div>
+		<div class="alert error" ng-repeat="error in errors">{{error}}</div>
+		
+		<a ng-show="signupCompleted" href="/app/#!/login" class="bigbtn full">Login</a>
+		
+		<form ng-hide="signupCompleted" autofill-submit="signup()">
+			<div class="field">
+				<input autofill ng-model="user.name" placeholder="Name" name="name" type="text" />
+				<span class="taglabel error">required</span>
+			</div>
+			<div class="field">
+				<input autofill ng-model="user.email" placeholder="Email" name="username" type="email" />
+				<span class="taglabel error">required</span>
+			</div>
+			<div class="field">
+				<input autofill ng-model="user.password" placeholder="Password" name="password" type="password" />
+				<span class="taglabel error">required</span>
+			</div>
+			
+			<div class="field">
+				<div class="alert warning"><input class="agree" ng-model="agreements.terms" id="terms" type="checkbox" /> <label for="terms">I agree to the <a href="/app/#!/terms">Terms of Service</a> and <a href="/app/#!/privacy">Privacy Policy</a> for {{appName}}.</label></div>
+			</div>
+			
+			<div class="field">
+				<div class="alert warning"><input class="agree" ng-model="agreements.emails" id="emails" type="checkbox" /> <label for="emails">I agree to receive emails containing news, updates and promotions regarding {{appName}}.</label></div>
+			</div>
+			
+			<input ng-model="isRobot" type="text" style="display: none;">
+			
+			<div class="actions">
+				<a href="/">Learn more?</a>
+				<a href="/app/#!/login">Already a member?</a>
+				<input class="bigbtn" type="submit" value="Sign Up" ng-disabled="loading" />
+			</div>
+		</form>
+	</section>
+</div>

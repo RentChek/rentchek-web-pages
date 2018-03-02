@@ -1,0 +1,107 @@
+@font-face {
+  font-family: "Flaticon";
+  src: url("/css/fonts/flaticon.cache.25ab7d28.eot");
+  src: url("/css/fonts/flaticon.cache.25ab7d28.eot#iefix") format("embedded-opentype"), url("/css/fonts/flaticon.cache.a85b3f86.woff") format("woff"), url("/css/fonts/flaticon.cache.8d29bef0.ttf") format("truetype"), url("/css/fonts/flaticon.cache.807ef470.svg") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+[class^="flaticon-"]:before, [class*=" flaticon-"]:before,
+[class^="flaticon-"]:after, [class*=" flaticon-"]:after {
+  font-family: Flaticon;
+  font-style: normal; }
+
+.flaticon-add121:before {
+  content: "\e000"; }
+
+.flaticon-atom4:before {
+  content: "\e001"; }
+
+.flaticon-bike5:before {
+  content: "\e002"; }
+
+.flaticon-block2:before {
+  content: "\e003"; }
+
+.flaticon-buy4:before {
+  content: "\e004"; }
+
+.flaticon-calendar48:before {
+  content: "\e005"; }
+
+.flaticon-calendar49:before {
+  content: "\e006"; }
+
+.flaticon-check25:before {
+  content: "\e007"; }
+
+.flaticon-clouds11:before {
+  content: "\e008"; }
+
+.flaticon-collapse3:before {
+  content: "\e009"; }
+
+.flaticon-correct7:before {
+  content: "\e00a"; }
+
+.flaticon-dollars17:before {
+  content: "\e00b"; }
+
+.flaticon-expand22:before {
+  content: "\e00c"; }
+
+.flaticon-flask3:before {
+  content: "\e00d"; }
+
+.flaticon-full19:before {
+  content: "\e00e"; }
+
+.flaticon-home60:before {
+  content: "\e00f"; }
+
+.flaticon-id1:before {
+  content: "\e010"; }
+
+.flaticon-locator6:before {
+  content: "\e011"; }
+
+.flaticon-mail21:before {
+  content: "\e012"; }
+
+.flaticon-new2:before {
+  content: "\e013"; }
+
+.flaticon-next15:before {
+  content: "\e014"; }
+
+.flaticon-padlock17:before {
+  content: "\e015"; }
+
+.flaticon-paper41:before {
+  content: "\e016"; }
+
+.flaticon-piggy6:before {
+  content: "\e017"; }
+
+.flaticon-portfolio7:before {
+  content: "\e018"; }
+
+.flaticon-previous11:before {
+  content: "\e019"; }
+
+.flaticon-purse1:before {
+  content: "\e01a"; }
+
+.flaticon-round27:before {
+  content: "\e01b"; }
+
+.flaticon-smart1:before {
+  content: "\e01c"; }
+
+.flaticon-tag26:before {
+  content: "\e01d"; }
+
+.flaticon-tools4:before {
+  content: "\e01e"; }
+
+.flaticon-open22:before {
+  content: "\e01f"; }

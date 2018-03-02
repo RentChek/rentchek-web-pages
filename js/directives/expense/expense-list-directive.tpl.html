@@ -1,0 +1,20 @@
+<div>
+	<div class="transaction" ng-repeat="expense in expenses">
+		<div>
+			<div ng-if="!details[expense._id]">
+				<span positive-negative="-expense.amount">{{-expense.amount | shortCurrency}}</span> {{expense.type}} for <a ng-click="toggleDetails(expense)" class="description">{{expense.description}}</a>
+			</div>
+			<div class="transaction-details" ng-if="details[expense._id]">
+				<span positive-negative="-expense.amount">{{-expense.amount | shortCurrency}}</span> {{expense.type}} for <a ng-click="toggleDetails(expense)" class="description">{{expense.description}}</a>
+				<div>Added on {{expense.created | moment:'MMM D, YYYY'}}</div>
+				<blockquote ng-if="expense.notes">{{expense.notes}}</blockquote>
+				<div class="actions">
+					<a ng-if="!edit[expense._id]" ng-click="toggleEdit(expense)" class="tagbtn">Edit</a>
+					<a ng-if="!edit[expense._id]" ng-click="toggleDetails(expense)" class="tagbtn">Close</a>
+					<a ng-if="edit[expense._id]" ng-click="cancelEdit(expense)" class="tagbtn">Cancel</a>
+				</div>
+			</div>
+		</div>
+		<expense ng-if="edit[expense._id]" expense="expense"></expense>
+	</div>
+</div>

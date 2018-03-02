@@ -1,0 +1,34 @@
+<div>
+	<loading-indicator active="loading"></loading-indicator>
+
+	<div ng-if="!loading">
+		<ul class="properties">
+			<li>
+				<property property="property" actions="false"></property>
+			</li>
+		</ul>
+
+		<ul class="finances">
+			<li>
+				<div class="title">Rent</div>
+				<div class="income">
+					<span positive-negative="income">{{income | shortCurrency}}</span>
+				</div>
+			</li>
+			<li ng-repeat="(expenseType, expense) in expenses">
+				<div class="title">{{expenseType}}</div>
+				<div class="income">
+					<span positive-negative="-expense.total">{{-expense.total | shortCurrency}}</span>
+				</div>
+			</li>
+			<li>
+				<div class="title">Net</div>
+				<div class="income">
+					<span positive-negative="net">{{net | shortCurrency}}</span>
+				</div>
+			</li>
+		</ul>
+
+		<finances-year-export property="property" year="year"></finances-year-export>
+	</div>
+</div>

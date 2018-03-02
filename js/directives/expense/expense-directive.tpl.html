@@ -1,0 +1,30 @@
+<form ng-submit="save(property)">
+	<div class="alert error" ng-repeat="error in errors">{{error}}</div>
+
+	<expense-type type="expense.type"></expense-type>
+
+	<div class="field">
+		<input ng-model="expense.description" placeholder="Description" type="text">
+		<span class="taglabel error">required</span>
+	</div>
+
+	<div class="field">
+		<input ng-model="expense.amount" placeholder="Amount" type="number" step="any">
+		<span class="taglabel error">required</span>
+	</div>
+
+	<div ng-if="!expense.date" class="field">
+		<input date="expense.date" placeholder="Date" type="text" pikaday="datePickerConfig" readonly>
+		<span class="taglabel error">required</span>
+	</div>
+
+	<div class="field">
+		<input ng-model="expense.notes" placeholder="Notes" type="text">
+		<span class="taglabel warning">optional</span>
+	</div>
+
+	<div class="actions">
+		<input ng-if="expense._id" class="bigbtn delete" ng-click="delete()" type="button" value="Delete" ng-disabled="loading">
+		<input class="bigbtn save" type="submit" value="Save" ng-disabled="loading">
+	</div>
+</form>

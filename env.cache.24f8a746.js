@@ -1,0 +1,1 @@
+angular.module("env",[]).constant("APP_NAME","RentChek✓").constant("APP_API","https://api.rentchek.com").constant("APP_STRIPE_PUBLISHABLE","pk_live_PtcVK9bOJ0MGcUiUZNZb5TBC");

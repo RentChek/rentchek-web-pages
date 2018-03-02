@@ -1,0 +1,15 @@
+<div class="timeline">
+	<a class="next-year bigbtn full" ng-href="/app/#!/finances/{{nextYear}}">
+		<span class="flaticon-collapse3"></span>
+		<span class="year">{{nextYear}}</span>
+	</a>
+	
+	<finances-year-slider year="year"></finances-year-slider>
+	
+	<finances-year-charts year="year"></finances-year-charts>
+	
+	<a ng-if="prevYear > minYear" class="prev-year bigbtn full" ng-href="/app/#!/finances/{{prevYear}}">
+		<span class="year">{{prevYear}}</span>
+		<span class="flaticon-expand22"></span>
+	</a>
+</div>

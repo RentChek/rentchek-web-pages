@@ -1,0 +1,224 @@
+<div>
+	<div class="flex-top">
+		<div class="begin">
+			<div class="map">
+				<property-map property="property" size="192"></property-map>
+			</div>
+		</div>
+
+		<div class="middle">
+			<div class="title">
+				<span ng-show="isCurrentlyRented">
+					<span class="long">Rented to <span class="person">{{currentTenant.name}}</span><br /></span>
+					<span class="short"><span class="person">{{currentTenant.name}}</span><br /></span>
+				</span>
+				<span class="label">{{property.label}}</span>
+				<span class="address">{{property.address}}</span>
+			</div>
+			<div class="details">
+				<span ng-show="property.city">{{property.city}}</span><span ng-show="property.city && property.province">, </span><span ng-show="property.province">{{property.province}}</span><br />
+				<span ng-show="property.country">{{property.country}}<br /></span>
+				<span ng-show="property.postal">{{property.postal}}<br /></span>
+			</div>
+		</div>
+
+		<div class="end">
+			<div class="rent">{{property.rent | shortCurrency}}</div>
+			<div class="labels">
+				<span class="taglabel success" ng-if="isCurrentlyRented">rented</span>
+				<span class="taglabel warning" ng-if="!isCurrentlyRented">vacant</span>
+			</div>
+			<div ng-if="actions" class="actions">
+				<a class="tagbtn" ng-click="startEditProperty(property)" ng-if="!editingProperty && !propertyNewTenant && !showVacateForm">Edit</a> <a class="tagbtn" ng-click="cancelEditProperty(property)" ng-if="editingProperty && !propertyNewTenant">Cancel</a>
+				<span ng-show="!editingProperty || propertyNewTenant">
+					<a class="tagbtn" ng-click="toggleRentProperty(property)" ng-if="!isCurrentlyRented && !showVacateForm"><span ng-if="!propertyNewTenant">Rent</span><span ng-if="propertyNewTenant">Cancel</span></a>
+					<a class="tagbtn" ng-click="toggleVacateProperty()" ng-if="isCurrentlyRented"><span ng-if="!showVacateForm">Vacate</span><span ng-if="showVacateForm">Cancel</span></a>
+				</span>
+			</div>
+		</div>
+	</div>
+
+	<property-vacate ng-if="showVacateForm" property="property"></property-vacate>
+
+	<form ng-show="editingProperty && !propertyNewTenant" ng-submit="editProperty(property)">
+		<div class="alert error" ng-repeat="error in errors.editingProperty track by $index">{{error}}</div>
+
+		<div class="field">
+			<input ng-model="property.rent" placeholder="Rent" type="number" step="any" min="0">
+			<span class="taglabel error">required</span>
+		</div>
+		<div class="field">
+			<input ng-model="property.label" placeholder="Label" type="text">
+			<span class="taglabel warning">optional</span>
+		</div>
+		<div class="field">
+			<input ng-model="property.address" placeholder="Address" type="text">
+			<span class="taglabel error">required</span>
+		</div>
+		<div class="field">
+			<input ng-model="property.city" placeholder="City" type="text">
+			<span class="taglabel error">required</span>
+		</div>
+		<div class="field">
+			<input ng-model="property.province" placeholder="Province or State" type="text">
+			<span class="taglabel warning">optional</span>
+		</div>
+		<div class="field">
+			<input ng-model="property.country" placeholder="Country" type="text">
+			<span class="taglabel error">required</span>
+		</div>
+		<div class="field">
+			<input ng-model="property.postal" placeholder="Postal" type="text">
+			<span class="taglabel warning">optional</span>
+		</div>
+
+		<ul ng-show="property.tenants" class="tenants">
+			<li ng-repeat="tenant in property.tenants">
+				<div class="labels">
+					<span class="taglabel success" ng-show="currentTenant._id == tenant._id">renting</span>
+					<span class="taglabel warning" ng-show="currentTenant._id != tenant._id">moved</span>
+				</div>
+				<div class="title">{{tenant.name}}</div>
+				<div class="details">
+					<a ng-href="mailto:{{tenant.email}}" ng-show="tenant.email">{{tenant.email}}<br /></a>
+					<a ng-href="tel:{{tenant.phone}}" ng-show="tenant.phone">{{tenant.phone}}<br /></a>
+					<span ng-if="tenant.deposit"><span positive-negative="tenant.deposit">{{tenant.deposit | shortCurrency}}</span> Security Deposit<br /></span>
+					<span ng-if="tenant.start">Moved in {{tenant.start | moment:'MMM D, YYYY'}}<br /></span>
+					<span ng-if="tenant.end">Moved out {{tenant.end | moment:'MMM D, YYYY'}}<br /></span>
+					<blockquote ng-if="tenant.notes">{{tenant.notes}}</blockquote>
+				</div>
+				<div class="actions">
+					<a class="tagbtn" ng-click="toggleRefundTenant(tenant)" ng-hide="!tenant.deposit || editingTenants[tenant._id]"><span ng-show="!refundingTenants[tenant._id]">Refund</span><span ng-show="refundingTenants[tenant._id]">Cancel</span></a>
+					<a class="tagbtn" ng-click="startEditTenant(tenant)" ng-hide="editingTenants[tenant._id] || refundingTenants[tenant._id]">Edit</a>
+					<a class="tagbtn" ng-click="cancelEditTenant(tenant)" ng-show="editingTenants[tenant._id]">Cancel</a>
+				</div>
+
+				<div ng-show="editingTenants[tenant._id]">
+					<div class="field">
+						<input ng-model="tenant.name" placeholder="Name" type="text">
+						<span class="taglabel error">required</span>
+					</div>
+					<div class="field">
+						<input ng-model="tenant.email" placeholder="Email" type="text">
+						<span class="taglabel error">required</span>
+					</div>
+					<div class="field">
+						<input ng-model="tenant.phone" placeholder="Phone" type="text">
+						<span class="taglabel warning">optional</span>
+					</div>
+					<div class="field">
+						<input ng-disabled="hasDeposit(property, tenant)" ng-model="tenant.deposit" placeholder="Deposit" type="number" step="any" min="0">
+						<span class="taglabel warning">optional</span>
+					</div>
+					<div class="field">
+						<input date="tenant.start" placeholder="Moving In Date" type="text" pikaday="monthPickerConfig" readonly value="{{tenant.start | moment:'MMMM D, YYYY'}}">
+						<span class="taglabel error">required</span>
+					</div>
+					<div ng-if="tenant.end" class="field">
+						<input date="tenant.end" placeholder="Moving Out Date" type="text" pikaday="monthPickerConfig" readonly value="{{tenant.end | moment:'MMMM D, YYYY'}}">
+						<span class="taglabel error">required</span>
+					</div>
+					<div class="field">
+						<input ng-model="tenant.notes" placeholder="Notes" type="text">
+						<span class="taglabel warning">optional</span>
+					</div>
+
+					<div ng-show="tenant.deposit && !hasDeposit(property, tenant)">
+						<div class="alert warning">
+							<span ng-if="tenant.send">A receipt will be emailed <span ng-show="tenant.name">to {{tenant.name}}</span> for {{tenant.deposit | shortCurrency}}.</span>
+							<span ng-if="!tenant.send">No receipt will be emailed<span ng-show="tenant.name"> to {{tenant.name}}</span>.</span>
+						</div>
+					</div>
+
+					<div class="flex-controls">
+						<div ng-show="tenant.deposit && !hasDeposit(property, tenant)" class="options">
+							<switch checked-label="Email Receipt" unchecked-label="Don't Email Receipt" ng-model="tenant.send"></switch>
+						</div>
+						<div class="actions">
+							<input ng-show="tenant.name && tenant.email && tenant.deposit && !hasDeposit(property, tenant) && tenant.send" class="bigbtn" type="button" value="Preview" ng-disabled="loading" ng-click="preview(tenant, tenant.deposit, 'deposit')">
+							<a class="bigbtn delete" ng-click="deleteTenant(property, tenant)">Delete</a>
+						</div>
+					</div>
+				</div>
+				<div ng-show="refundingTenants[tenant._id]">
+					<div class="alert error" ng-repeat="error in errors.refundingTenants[tenant._id]">{{error}}</div>
+
+					<div class="field">
+						<input ng-model="refundingTenants[tenant._id].amount" placeholder="Refund" type="number" step="any" min="0">
+						<span class="taglabel error">required</span>
+					</div>
+					<div class="field">
+						<input ng-show="(tenant.deposit - refundingTenants[tenant._id].amount) > 0" ng-model="refundingTenants[tenant._id].reason" placeholder="Reason for withholding {{tenant.deposit - refundingTenants[tenant._id].amount | shortCurrency}}" type="text">
+						<span class="taglabel error">required</span>
+					</div>
+
+					<div class="alert warning">
+						<span ng-show="refundingTenants[tenant._id].send">A refund receipt will be emailed to {{tenant.name}}<span ng-show="refundingTenants[tenant._id].amount"> for {{refundingTenants[tenant._id].amount | shortCurrency}}</span><span ng-show="(tenant.deposit - refundingTenants[tenant._id].amount) > 0 && refundingTenants[tenant._id].reason"> with {{tenant.deposit - refundingTenants[tenant._id].amount | shortCurrency}} being withheld for "{{refundingTenants[tenant._id].reason}}"</span>.</span>
+						<span ng-hide="refundingTenants[tenant._id].send">No receipt will be emailed<span ng-show="tenant.name"> to {{tenant.name}}</span>.</span>
+					</div>
+
+					<div class="flex-controls">
+						<div class="options">
+							<switch checked-label="Email Receipt" unchecked-label="Don't Email Receipt" ng-model="refundingTenants[tenant._id].send"></switch>
+						</div>
+						<div class="actions">
+							<input ng-show="refundingTenants[tenant._id].send" class="bigbtn" type="button" value="Preview" ng-disabled="loading" ng-click="preview(tenant, refundingTenants[tenant._id].amount, 'refund', refundingTenants[tenant._id].reason)">
+							<input class="bigbtn save" type="button" ng-click="refund(property, tenant)" value="Save" ng-disabled="loading">
+						</div>
+					</div>
+				</div>
+			</li>
+		</ul>
+
+		<div class="flex-controls">
+			<div class="actions">
+				<input class="bigbtn delete" type="button" value="Delete" ng-disabled="loading" ng-click="deleteProperty(property)">
+				<input class="bigbtn save" type="submit" value="Save" ng-disabled="loading">
+			</div>
+		</div>
+	</form>
+
+	<form ng-if="propertyNewTenant" ng-submit="editProperty(property)">
+		<div class="alert error" ng-repeat="error in errors.editingProperty track by $index">{{error}}</div>
+
+		<div class="field">
+			<input ng-model="propertyNewTenant.name" placeholder="Name" type="text">
+			<span class="taglabel error">required</span>
+		</div>
+		<div class="field">
+			<input ng-model="propertyNewTenant.email" placeholder="Email" type="text">
+			<span class="taglabel error">required</span>
+		</div>
+		<div class="field">
+			<input ng-model="propertyNewTenant.phone" placeholder="Phone" type="text">
+			<span class="taglabel warning">optional</span>
+		</div>
+		<div class="field">
+			<input ng-model="propertyNewTenant.deposit" placeholder="Deposit" type="number" step="any" min="0">
+			<span class="taglabel warning">optional</span>
+		</div>
+		<div class="field">
+			<input date="propertyNewTenant.start" placeholder="Moving In Date" type="text" pikaday="monthPickerConfig" readonly>
+			<span class="taglabel error">required</span>
+		</div>
+		<div class="field">
+			<input ng-model="propertyNewTenant.notes" placeholder="Notes" type="text">
+			<span class="taglabel warning">optional</span>
+		</div>
+
+		<div ng-if="propertyNewTenant.deposit" class="alert warning">
+			<span ng-if="propertyNewTenant.send">A receipt will be emailed <span ng-if="propertyNewTenant.name">to {{propertyNewTenant.name}}</span> for {{propertyNewTenant.deposit | shortCurrency}}.</span>
+			<span ng-if="!propertyNewTenant.send">No receipt will be emailed<span ng-if="propertyNewTenant.name"> to {{propertyNewTenant.name}}</span>.</span>
+		</div>
+
+		<div class="flex-controls">
+			<div ng-if="propertyNewTenant.deposit" class="options">
+				<switch checked-label="Email Receipt" unchecked-label="Don't Email Receipt" ng-model="propertyNewTenant.send"></switch>
+			</div>
+			<div class="actions">
+				<input ng-if="propertyNewTenant.name && propertyNewTenant.email && propertyNewTenant.deposit && propertyNewTenant.send" class="bigbtn" type="button" value="Preview" ng-disabled="loading" ng-click="preview(propertyNewTenant, propertyNewTenant.deposit, 'deposit')">
+				<input class="bigbtn save" type="submit" value="Save" ng-disabled="loading">
+			</div>
+		</div>
+	</form>
+</div>
