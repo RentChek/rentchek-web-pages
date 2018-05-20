@@ -1203,10 +1203,15 @@ angular.module("templates/directives/share-footer-directive.tpl.html", []).run([
   $templateCache.put("templates/directives/share-footer-directive.tpl.html",
     "<footer>\n" +
     "	<section>\n" +
-    "		<p><a href=\"/app/#!/terms\">Terms of Service</a> / <a href=\"/app/#!/privacy\">Privacy Policy</a> / <a href=\"http://chesleybrown.ca\" target=\"_blank\">chesleybrown.ca</a></p>\n" +
+    "		<p>\n" +
+    "			<a href=\"/app/#!/terms\">Terms of Service</a> / <a href=\"/app/#!/privacy\">Privacy Policy</a> / <a href=\"http://chesleybrown.ca\" target=\"_blank\">chesleybrown.ca</a>\n" +
+    "		</p>\n" +
     "		<div class=\"social\">\n" +
     "			<a href=\"http://facebook.com/RentChek\" target=\"_blank\"><img src=\"/img/social/facebook_64x.png\" alt=\"Facebook\"></a>\n" +
     "			<a href=\"http://twitter.com/RentChek\" target=\"_blank\"><img src=\"/img/social/twitter_64x.png\" alt=\"Twitter\"></a>\n" +
+    "		</div>\n" +
+    "		<div class=\"donate\">\n" +
+    "			<a href=\"https://paypal.me/chesleybrown/5\" target=\"_blank\" class=\"tagbtn\">Like RentChek? Buy Me A Beer :)</a>\n" +
     "		</div>\n" +
     "	</section>\n" +
     "</footer>\n" +

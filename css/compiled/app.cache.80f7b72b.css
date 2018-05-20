@@ -756,7 +756,12 @@
     -o-transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
     transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg); } }
 
-[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+[ng\:cloak],
+[ng-cloak],
+[data-ng-cloak],
+[x-ng-cloak],
+.ng-cloak,
+.x-ng-cloak {
   display: none !important; }
 
 a {
@@ -787,7 +792,7 @@ p {
 
 body {
   background: #fff;
-  font: 16px/26px 'Lato', sans-serif;
+  font: 16px/26px "Lato", sans-serif;
   margin-top: 140px;
   color: #2c3e50; }
   body > .content {
@@ -826,7 +831,7 @@ body {
   margin: 0 auto;
   overflow: hidden; }
 
-iframe[name=savepasswordprompt] {
+iframe[name="savepasswordprompt"] {
   display: none; }
 
 .layout-side-menu {
@@ -854,7 +859,8 @@ header {
   width: 100%;
   overflow: hidden; }
 
-h1, .logo {
+h1,
+.logo {
   margin: 0;
   color: #fff;
   padding: 22px 0 12px;
@@ -862,11 +868,14 @@ h1, .logo {
   font-weight: bolder;
   height: 46px;
   line-height: 46px; }
-  h1 a, .logo a {
+  h1 a,
+  .logo a {
     color: #fff; }
-    h1 a:active, .logo a:active {
+    h1 a:active,
+    .logo a:active {
       color: #f2f2f2; }
-    h1 a:hover, .logo a:hover {
+    h1 a:hover,
+    .logo a:hover {
       color: #f2f2f2; }
 
 h3 {
@@ -882,6 +891,8 @@ footer {
   footer .social img {
     width: 32px;
     height: 32px; }
+  footer .donate {
+    padding: 10px 0 20px 0; }
   footer p {
     padding-left: 5px;
     padding-right: 5px; }
@@ -1050,7 +1061,10 @@ section.container {
       padding: 10px;
       z-index: 999; }
 
-.bigbtn, a.bigbtn, a.bigbtn:link, a.bigbtn:visited {
+.bigbtn,
+a.bigbtn,
+a.bigbtn:link,
+a.bigbtn:visited {
   font-size: 1.45rem;
   line-height: 3.45rem;
   font-weight: normal;
@@ -1063,33 +1077,69 @@ section.container {
   -webkit-transition: background-color 0.5s;
   -moz-transition: background-color 0.5s;
   transition: background-color 0.5s; }
-  .bigbtn:active, a.bigbtn:active, a.bigbtn:link:active, a.bigbtn:visited:active {
+  .bigbtn:active,
+  a.bigbtn:active,
+  a.bigbtn:link:active,
+  a.bigbtn:visited:active {
     top: 1px;
     background: #196090; }
-  .bigbtn:hover, a.bigbtn:hover, a.bigbtn:link:hover, a.bigbtn:visited:hover {
+  .bigbtn:hover,
+  a.bigbtn:hover,
+  a.bigbtn:link:hover,
+  a.bigbtn:visited:hover {
     background: #217dbb;
     -webkit-transition: background-color 0.3s;
     -moz-transition: background-color 0.3s;
     transition: background-color 0.3s; }
-  .bigbtn:disabled, a.bigbtn:disabled, a.bigbtn:link:disabled, a.bigbtn:visited:disabled {
+  .bigbtn:disabled,
+  a.bigbtn:disabled,
+  a.bigbtn:link:disabled,
+  a.bigbtn:visited:disabled {
     background: #124364; }
-  .bigbtn.delete, a.bigbtn.delete, a.bigbtn:link.delete, a.bigbtn:visited.delete {
+  .bigbtn.delete,
+  a.bigbtn.delete,
+  a.bigbtn:link.delete,
+  a.bigbtn:visited.delete {
     background: #e74c3c; }
-  .bigbtn.delete:active, a.bigbtn.delete:active, a.bigbtn:link.delete:active, a.bigbtn:visited.delete:active {
+  .bigbtn.delete:active,
+  a.bigbtn.delete:active,
+  a.bigbtn:link.delete:active,
+  a.bigbtn:visited.delete:active {
     background: #a82315; }
-  .bigbtn.delete:hover, a.bigbtn.delete:hover, a.bigbtn:link.delete:hover, a.bigbtn:visited.delete:hover {
+  .bigbtn.delete:hover,
+  a.bigbtn.delete:hover,
+  a.bigbtn:link.delete:hover,
+  a.bigbtn:visited.delete:hover {
     background: #d62c1a; }
-  .bigbtn.delete:disabled, a.bigbtn.delete:disabled, a.bigbtn:link.delete:disabled, a.bigbtn:visited.delete:disabled {
+  .bigbtn.delete:disabled,
+  a.bigbtn.delete:disabled,
+  a.bigbtn:link.delete:disabled,
+  a.bigbtn:visited.delete:disabled {
     background: #7b190f; }
-  .bigbtn.save, a.bigbtn.save, a.bigbtn:link.save, a.bigbtn:visited.save {
+  .bigbtn.save,
+  a.bigbtn.save,
+  a.bigbtn:link.save,
+  a.bigbtn:visited.save {
     background: #27ae60; }
-  .bigbtn.save:active, a.bigbtn.save:active, a.bigbtn:link.save:active, a.bigbtn:visited.save:active {
+  .bigbtn.save:active,
+  a.bigbtn.save:active,
+  a.bigbtn:link.save:active,
+  a.bigbtn:visited.save:active {
     background: #145b32; }
-  .bigbtn.save:hover, a.bigbtn.save:hover, a.bigbtn:link.save:hover, a.bigbtn:visited.save:hover {
+  .bigbtn.save:hover,
+  a.bigbtn.save:hover,
+  a.bigbtn:link.save:hover,
+  a.bigbtn:visited.save:hover {
     background: #1e8449; }
-  .bigbtn.save:disabled, a.bigbtn.save:disabled, a.bigbtn:link.save:disabled, a.bigbtn:visited.save:disabled {
+  .bigbtn.save:disabled,
+  a.bigbtn.save:disabled,
+  a.bigbtn:link.save:disabled,
+  a.bigbtn:visited.save:disabled {
     background: #0b311b; }
-  .bigbtn.full, a.bigbtn.full, a.bigbtn:link.full, a.bigbtn:visited.full {
+  .bigbtn.full,
+  a.bigbtn.full,
+  a.bigbtn:link.full,
+  a.bigbtn:visited.full {
     display: block;
     text-align: center; }
 
@@ -1097,9 +1147,12 @@ input.bigbtn.full,
 button.bigbtn.full {
   width: 100%; }
 
-.tagbtn, a.tagbtn, a.tagbtn:link, a.tagbtn:visited {
-  font-size: 0.80rem;
-  line-height: 0.80rem;
+.tagbtn,
+a.tagbtn,
+a.tagbtn:link,
+a.tagbtn:visited {
+  font-size: 0.8rem;
+  line-height: 0.8rem;
   font-weight: normal;
   color: #fff;
   background: #3498db;
@@ -1109,39 +1162,81 @@ button.bigbtn.full {
   -webkit-transition: background-color 0.5s;
   -moz-transition: background-color 0.5s;
   transition: background-color 0.5s; }
-  .tagbtn.full, a.tagbtn.full, a.tagbtn:link.full, a.tagbtn:visited.full {
+  .tagbtn.full,
+  a.tagbtn.full,
+  a.tagbtn:link.full,
+  a.tagbtn:visited.full {
     display: block;
     text-align: center; }
-  .tagbtn:hover, a.tagbtn:hover, a.tagbtn:link:hover, a.tagbtn:visited:hover {
+  .tagbtn:hover,
+  a.tagbtn:hover,
+  a.tagbtn:link:hover,
+  a.tagbtn:visited:hover {
     background: #217dbb;
     -webkit-transition: background-color 0.3s;
     -moz-transition: background-color 0.3s;
     transition: background-color 0.3s; }
-  .tagbtn:active, a.tagbtn:active, a.tagbtn:link:active, a.tagbtn:visited:active {
+  .tagbtn:active,
+  a.tagbtn:active,
+  a.tagbtn:link:active,
+  a.tagbtn:visited:active {
     top: 1px; }
-  .tagbtn.delete, a.tagbtn.delete, a.tagbtn:link.delete, a.tagbtn:visited.delete {
+  .tagbtn.delete,
+  a.tagbtn.delete,
+  a.tagbtn:link.delete,
+  a.tagbtn:visited.delete {
     background: #e74c3c; }
-  .tagbtn.delete:active, a.tagbtn.delete:active, a.tagbtn:link.delete:active, a.tagbtn:visited.delete:active {
+  .tagbtn.delete:active,
+  a.tagbtn.delete:active,
+  a.tagbtn:link.delete:active,
+  a.tagbtn:visited.delete:active {
     background: #a82315; }
-  .tagbtn.delete:hover, a.tagbtn.delete:hover, a.tagbtn:link.delete:hover, a.tagbtn:visited.delete:hover {
+  .tagbtn.delete:hover,
+  a.tagbtn.delete:hover,
+  a.tagbtn:link.delete:hover,
+  a.tagbtn:visited.delete:hover {
     background: #d62c1a; }
 
-.bigbtn.dark, a.bigbtn.dark, a.bigbtn:link.dark, a.bigbtn:visited.dark,
-.tagbtn.dark, a.tagbtn.dark, a.tagbtn:link.dark, a.tagbtn:visited.dark {
+.bigbtn.dark,
+a.bigbtn.dark,
+a.bigbtn:link.dark,
+a.bigbtn:visited.dark,
+.tagbtn.dark,
+a.tagbtn.dark,
+a.tagbtn:link.dark,
+a.tagbtn:visited.dark {
   background: #16527a; }
-  .bigbtn.dark:hover, a.bigbtn.dark:hover, a.bigbtn:link.dark:hover, a.bigbtn:visited.dark:hover,
-  .tagbtn.dark:hover, a.tagbtn.dark:hover, a.tagbtn:link.dark:hover, a.tagbtn:visited.dark:hover {
+  .bigbtn.dark:hover,
+  a.bigbtn.dark:hover,
+  a.bigbtn:link.dark:hover,
+  a.bigbtn:visited.dark:hover,
+  .tagbtn.dark:hover,
+  a.tagbtn.dark:hover,
+  a.tagbtn:link.dark:hover,
+  a.tagbtn:visited.dark:hover {
     background: #1d6fa5; }
 
-.bigbtn.light, a.bigbtn.light, a.bigbtn:link.light, a.bigbtn:visited.light,
-.tagbtn.light, a.tagbtn.light, a.tagbtn:link.light, a.tagbtn:visited.light {
+.bigbtn.light,
+a.bigbtn.light,
+a.bigbtn:link.light,
+a.bigbtn:visited.light,
+.tagbtn.light,
+a.tagbtn.light,
+a.tagbtn:link.light,
+a.tagbtn:visited.light {
   background: #75b9e7; }
-  .bigbtn.light:hover, a.bigbtn.light:hover, a.bigbtn:link.light:hover, a.bigbtn:visited.light:hover,
-  .tagbtn.light:hover, a.tagbtn.light:hover, a.tagbtn:link.light:hover, a.tagbtn:visited.light:hover {
+  .bigbtn.light:hover,
+  a.bigbtn.light:hover,
+  a.bigbtn:link.light:hover,
+  a.bigbtn:visited.light:hover,
+  .tagbtn.light:hover,
+  a.tagbtn.light:hover,
+  a.tagbtn:link.light:hover,
+  a.tagbtn:visited.light:hover {
     background: #4aa3df; }
 
 span.taglabel {
-  font-size: 0.70rem;
+  font-size: 0.7rem;
   line-height: 0.75rem;
   font-weight: lighter;
   color: #fff;
@@ -1195,14 +1290,14 @@ span.taglabel {
   color: #cccccc;
   font-weight: lighter; }
 
-input[type=name],
-input[type=email],
-input[type=password],
-input[type=text],
-input[type=number],
-input[type=date],
-input[type=month],
-textarea[type=text] {
+input[type="name"],
+input[type="email"],
+input[type="password"],
+input[type="text"],
+input[type="number"],
+input[type="date"],
+input[type="month"],
+textarea[type="text"] {
   font-family: "Helvetica Neue", Helvetica, sans-serif;
   font-size: 1.55rem;
   width: 100%;
@@ -1219,37 +1314,37 @@ textarea[type=text] {
   -moz-transition: border-color 0.5s;
   transition: border-color 0.5s; }
 
-input[type=name]:hover,
-input[type=email]:hover,
-input[type=password]:hover,
-input[type=text]:hover,
-input[type=number]:hover,
-input[type=date]:hover,
-input[type=month]:hover,
-textarea[type=text]:hover {
+input[type="name"]:hover,
+input[type="email"]:hover,
+input[type="password"]:hover,
+input[type="text"]:hover,
+input[type="number"]:hover,
+input[type="date"]:hover,
+input[type="month"]:hover,
+textarea[type="text"]:hover {
   outline: none;
   border: 1px solid #bbb;
   -webkit-transition: border-color 0.3s;
   -moz-transition: border-color 0.3s;
   transition: border-color 0.3s; }
 
-input[type=name]:focus,
-input[type=email]:focus,
-input[type=password]:focus,
-input[type=text]:focus,
-input[type=number]:focus,
-input[type=date]:focus,
-input[type=month]:focus,
-textarea[type=text]:focus {
+input[type="name"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus,
+input[type="text"]:focus,
+input[type="number"]:focus,
+input[type="date"]:focus,
+input[type="month"]:focus,
+textarea[type="text"]:focus {
   outline: none;
   border: 1px solid #3498db; }
 
-input[type=number]::-webkit-inner-spin-button,
-input[type=number]::-webkit-outer-spin-button {
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
   -webkit-appearance: none;
   margin: 0; }
 
-textarea[type=text] {
+textarea[type="text"] {
   height: 200px; }
 
 input.highlight {
@@ -1275,12 +1370,12 @@ input.error {
       -moz-animation-name: fadeIn;
       animation-name: fadeIn;
       opacity: 1; }
-  .field input.agree[type=checkbox] {
+  .field input.agree[type="checkbox"] {
     display: block;
     position: absolute;
     top: 16px;
     left: 10px; }
-    .field input.agree[type=checkbox] + label {
+    .field input.agree[type="checkbox"] + label {
       display: block;
       margin-left: 25px; }
 
@@ -1288,10 +1383,10 @@ input.error {
 .timeline a.prev-year {
   display: block;
   text-align: center;
-  font-size: 1.50rem; }
+  font-size: 1.5rem; }
   .timeline a.next-year .year,
   .timeline a.prev-year .year {
-    font-size: 0.90rem;
+    font-size: 0.9rem;
     font-weight: normal;
     display: block; }
 
@@ -1307,7 +1402,7 @@ input.error {
   padding-bottom: 0.45rem; }
   .timeline a.prev-year .year {
     line-height: 1.55rem;
-    padding-top: 0.20rem; }
+    padding-top: 0.2rem; }
 
 .timeline a.add-month {
   text-align: center;
@@ -1525,7 +1620,7 @@ ul.finances {
     ul.finances > li .subtitle {
       width: 50%;
       float: left;
-      font-size: 1.00rem;
+      font-size: 1rem;
       font-weight: lighter;
       clear: left; }
     ul.finances > li .income {
@@ -1658,7 +1753,7 @@ blockquote {
   border-left: 10px solid #ddd;
   margin: 0 10px;
   padding: 0.5em 10px;
-  quotes: "“" "”" "‘" "’"; }
+  quotes: "\201C" "\201D" "\2018" "\2019"; }
 
 blockquote:before {
   color: #ddd;
@@ -1679,7 +1774,8 @@ div.subscriptions {
     overflow: auto;
     margin-top: 10px;
     margin-bottom: 10px; }
-    div.subscriptions .options .monthly, div.subscriptions .options .yearly {
+    div.subscriptions .options .monthly,
+    div.subscriptions .options .yearly {
       color: #ddd;
       cursor: pointer;
       overflow: hidden;
@@ -1688,12 +1784,14 @@ div.subscriptions {
       border-style: solid;
       border-color: #ddd;
       width: 48%; }
-      div.subscriptions .options .monthly:hover, div.subscriptions .options .yearly:hover {
+      div.subscriptions .options .monthly:hover,
+      div.subscriptions .options .yearly:hover {
         border-color: #bbb;
         -webkit-transition: border-color 0.3s;
         -moz-transition: border-color 0.3s;
         transition: border-color 0.3s; }
-      div.subscriptions .options .monthly.selected, div.subscriptions .options .yearly.selected {
+      div.subscriptions .options .monthly.selected,
+      div.subscriptions .options .yearly.selected {
         color: #2c3e50;
         border-color: #3498db;
         -webkit-transition: color 0.3s;
@@ -1702,19 +1800,23 @@ div.subscriptions {
         -webkit-transition: border-color 0.3s;
         -moz-transition: border-color 0.3s;
         transition: border-color 0.3s; }
-        div.subscriptions .options .monthly.selected .icon, div.subscriptions .options .yearly.selected .icon {
+        div.subscriptions .options .monthly.selected .icon,
+        div.subscriptions .options .yearly.selected .icon {
           -webkit-transition: opacity 0.3s;
           -moz-transition: opacity 0.3s;
           transition: opacity 0.3s;
           opacity: 1; }
-      div.subscriptions .options .monthly .price, div.subscriptions .options .yearly .price {
+      div.subscriptions .options .monthly .price,
+      div.subscriptions .options .yearly .price {
         font-size: 2.4rem;
         line-height: 1.8rem;
         padding-top: 20px;
         padding-bottom: 20px; }
-        div.subscriptions .options .monthly .price .per, div.subscriptions .options .yearly .price .per {
+        div.subscriptions .options .monthly .price .per,
+        div.subscriptions .options .yearly .price .per {
           font-size: 1.2rem; }
-      div.subscriptions .options .monthly .icon, div.subscriptions .options .yearly .icon {
+      div.subscriptions .options .monthly .icon,
+      div.subscriptions .options .yearly .icon {
         opacity: 0;
         text-align: center;
         font-size: 4rem;
@@ -1783,20 +1885,29 @@ div.controls {
   text-align: center;
   margin-bottom: 50px; }
 
-form, div.form {
+form,
+div.form {
   clear: both;
   display: block;
   overflow: auto; }
-  form > div.actions, div.form > div.actions {
+  form > div.actions,
+  div.form > div.actions {
     margin-top: 10px;
     margin-bottom: 10px;
     float: right;
     clear: both; }
-    form > div.actions a, form > div.actions input[type=text], form > div.actions input[type=submit], div.form > div.actions a, div.form > div.actions input[type=text], div.form > div.actions input[type=submit] {
+    form > div.actions a,
+    form > div.actions input[type="text"],
+    form > div.actions input[type="submit"],
+    div.form > div.actions a,
+    div.form > div.actions input[type="text"],
+    div.form > div.actions input[type="submit"] {
       margin-left: 10px; }
-    form > div.actions a, div.form > div.actions a {
-      font-size: 0.70rem; }
-  form .flex-controls, div.form .flex-controls {
+    form > div.actions a,
+    div.form > div.actions a {
+      font-size: 0.7rem; }
+  form .flex-controls,
+  div.form .flex-controls {
     display: -webkit-box;
     display: -moz-box;
     display: box;
@@ -1842,7 +1953,8 @@ form, div.form {
     -ms-flex-align: center;
     margin-top: 10px;
     margin-bottom: 10px; }
-    form .flex-controls > div.options, div.form .flex-controls > div.options {
+    form .flex-controls > div.options,
+    div.form .flex-controls > div.options {
       -webkit-box-ordinal-group: 0;
       -moz-box-ordinal-group: 0;
       box-ordinal-group: 0;
@@ -1861,7 +1973,8 @@ form, div.form {
       -moz-align-self: flex-start;
       align-self: flex-start;
       -ms-flex-item-align: start; }
-    form .flex-controls > div.actions, div.form .flex-controls > div.actions {
+    form .flex-controls > div.actions,
+    div.form .flex-controls > div.actions {
       -webkit-box-ordinal-group: 2;
       -moz-box-ordinal-group: 2;
       box-ordinal-group: 2;
@@ -1881,7 +1994,12 @@ form, div.form {
       align-self: flex-end;
       -ms-flex-item-align: end;
       margin-left: auto; }
-      form .flex-controls > div.actions a, form .flex-controls > div.actions input[type=text], form .flex-controls > div.actions input[type=submit], div.form .flex-controls > div.actions a, div.form .flex-controls > div.actions input[type=text], div.form .flex-controls > div.actions input[type=submit] {
+      form .flex-controls > div.actions a,
+      form .flex-controls > div.actions input[type="text"],
+      form .flex-controls > div.actions input[type="submit"],
+      div.form .flex-controls > div.actions a,
+      div.form .flex-controls > div.actions input[type="text"],
+      div.form .flex-controls > div.actions input[type="submit"] {
         margin-left: 10px; }
 
 /* ==========================================================================
@@ -1916,7 +2034,10 @@ form, div.form {
     display: none !important; }
   .details .short {
     display: block !important; }
-  .bigbtn, a.bigbtn, a.bigbtn:link, a.bigbtn:visited {
+  .bigbtn,
+  a.bigbtn,
+  a.bigbtn:link,
+  a.bigbtn:visited {
     font-size: 1rem; }
   .switch div ~ label {
     display: none; } }
