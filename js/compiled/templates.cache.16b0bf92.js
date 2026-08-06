@@ -50,6 +50,11 @@ angular.module("templates/controllers/account/account.tpl.html", []).run(["$temp
     "	<div class=\"controls\">\n" +
     "		<a uservoice-trigger identify=\"uservoiceIdentify\" mode=\"contact\" position=\"top\" class=\"tagbtn\">Feedback</a>\n" +
     "		<a ng-click=\"logout()\" class=\"tagbtn\">Logout</a>\n" +
+    "		<!-- Plain <a href>, not ng-href/ng-click -- this leaves the Angular\n" +
+    "		     app entirely for the new React Native/Expo app served at /v2/,\n" +
+    "		     not an in-app route change. Mirrors the same \"Switch to classic\n" +
+    "		     version\" button on that app's Account screen. -->\n" +
+    "		<a href=\"/v2/\" class=\"tagbtn\">Try the new version</a>\n" +
     "	</div>\n" +
     "</div>\n" +
     "");

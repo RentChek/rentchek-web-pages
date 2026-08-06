@@ -23,5 +23,10 @@
 	<div class="controls">
 		<a uservoice-trigger identify="uservoiceIdentify" mode="contact" position="top" class="tagbtn">Feedback</a>
 		<a ng-click="logout()" class="tagbtn">Logout</a>
+		<!-- Plain <a href>, not ng-href/ng-click -- this leaves the Angular
+		     app entirely for the new React Native/Expo app served at /v2/,
+		     not an in-app route change. Mirrors the same "Switch to classic
+		     version" button on that app's Account screen. -->
+		<a href="/v2/" class="tagbtn">Try the new version</a>
 	</div>
 </div>
