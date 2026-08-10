@@ -57,13 +57,6 @@ angular.module("templates/controllers/account/account.tpl.html", []).run(["$temp
     "		<a href=\"/v2/\" class=\"tagbtn\">Try the new version</a>\n" +
     "	</div>\n" +
     "\n" +
-    "	<!-- Flaticon's free-tier license requires this credit to be visible\n" +
-    "	     somewhere reachable in the app -- humans.txt already had the text,\n" +
-    "	     but nothing in the app links to it, so it wasn't actually visible\n" +
-    "	     to anyone. Same credit added to rentchek-app's Account screen. -->\n" +
-    "	<div class=\"controls\">\n" +
-    "		<a href=\"https://www.flaticon.com\" target=\"_blank\" class=\"tagbtn\">Icons made by Freepik from www.flaticon.com</a>\n" +
-    "	</div>\n" +
     "</div>\n" +
     "");
 }]);
@@ -1218,6 +1211,9 @@ angular.module("templates/directives/share-footer-directive.tpl.html", []).run([
     "	<section>\n" +
     "		<p>\n" +
     "			<a href=\"/app/#!/terms\">Terms of Service</a> / <a href=\"/app/#!/privacy\">Privacy Policy</a> / <a href=\"http://chesleybrown.ca\" target=\"_blank\">chesleybrown.ca</a>\n" +
+    "		</p>\n" +
+    "		<p>\n" +
+    "			Icons made by Freepik from <a href=\"https://www.flaticon.com\" target=\"_blank\">www.flaticon.com</a>\n" +
     "		</p>\n" +
     "		<div class=\"social\">\n" +
     "			<a href=\"http://facebook.com/RentChek\" target=\"_blank\"><img src=\"/img/social/facebook_64x.png\" alt=\"Facebook\"></a>\n" +
