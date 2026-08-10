@@ -56,6 +56,14 @@ angular.module("templates/controllers/account/account.tpl.html", []).run(["$temp
     "		     version\" button on that app's Account screen. -->\n" +
     "		<a href=\"/v2/\" class=\"tagbtn\">Try the new version</a>\n" +
     "	</div>\n" +
+    "\n" +
+    "	<!-- Flaticon's free-tier license requires this credit to be visible\n" +
+    "	     somewhere reachable in the app -- humans.txt already had the text,\n" +
+    "	     but nothing in the app links to it, so it wasn't actually visible\n" +
+    "	     to anyone. Same credit added to rentchek-app's Account screen. -->\n" +
+    "	<div class=\"controls\">\n" +
+    "		<a href=\"https://www.flaticon.com\" target=\"_blank\" class=\"tagbtn\">Icons made by Freepik from www.flaticon.com</a>\n" +
+    "	</div>\n" +
     "</div>\n" +
     "");
 }]);
