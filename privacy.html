@@ -5,65 +5,124 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="Privacy Policy for RentChek.">
 <link rel="icon" href="/favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
 <title>Privacy Policy · RentChek</title>
 <style>
+  /*
+   * Chrome ported from the app's own components/ui/BrandHeader.tsx,
+   * Screen.tsx and SectionHeading.tsx + lib/theme.ts -- measured live
+   * against the running app (npm run web -> /login), not eyeballed. The
+   * two headline elements (wordmark, section title) deliberately use the
+   * platform's generic sans-serif, not Lato -- confirmed against
+   * lib/theme.ts's fonts.wordmark, which explains why.
+   */
   :root { color-scheme: light; }
   * { box-sizing: border-box; }
   body {
     margin: 0;
-    padding: 48px 20px 80px;
     background: #ffffff;
     color: #2c3e50;
-    font: 16px/26px Lato, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    font-family: 'Lato', -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    line-height: 26px;
   }
+  a { color: #507192; text-decoration: none; }
+  a:hover { color: #7997b5; }
+
+  .brand-banner { display: block; background: #3498db; }
+  .brand-bar { height: 80px; }
+  .wordmark {
+    margin: 0;
+    padding: 22px 0 12px;
+    text-align: center;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    font-size: 48px;
+    line-height: 46px;
+    font-weight: 700;
+    color: #ffffff;
+  }
+  .house-notch { position: relative; height: 60px; overflow: hidden; }
+  .roof {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    margin-left: -60px;
+    width: 0;
+    height: 0;
+    border-left: 60px solid transparent;
+    border-right: 60px solid transparent;
+    border-bottom: 60px solid #ffffff;
+  }
+  .chimney {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    margin-left: 28px;
+    width: 17px;
+    height: 30px;
+    background: #ffffff;
+  }
+
   main { max-width: 648px; margin: 0 auto; }
-  .home {
-    display: inline-block;
-    margin-bottom: 32px;
-    font-size: 11.2px;
-    color: #507192;
-    text-decoration: none;
+  .content { padding: 50px 15px; }
+
+  .section-heading { position: relative; text-align: center; height: 36px; margin: 0; }
+  .section-heading::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: #dddddd;
   }
-  .home:hover { color: #7997b5; }
-  h1 {
+  .section-heading h1 {
+    position: relative;
+    display: inline-block;
+    margin: -21px 0 0;
+    padding: 0 10px;
+    background: #ffffff;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     font-size: 21.6px;
+    line-height: 26px;
     font-weight: 400;
     color: #999999;
-    text-align: center;
-    margin: 0 0 8px;
-    padding-bottom: 16px;
-    border-bottom: 1px solid #dddddd;
   }
   .revised {
     font-size: 11.2px;
     color: #999999;
     text-align: center;
-    margin: 0 0 32px;
+    margin: 8px 0 0;
   }
   h2 {
     font-size: 16px;
     font-weight: 600;
     color: #2c3e50;
-    margin: 24px 0 0;
+    margin: 16px 0 0;
   }
   p { margin: 8px 0 0; }
-  a { color: #507192; }
-  a:hover { color: #7997b5; }
+
   footer {
-    margin-top: 40px;
-    padding-top: 16px;
+    padding: 10px 15px 55px;
     border-top: 1px solid #dddddd;
-    font-size: 11.2px;
-    color: #999999;
+    text-align: center;
   }
-  footer a { margin-right: 12px; }
+  footer a {
+    margin: 0 6px;
+    font-size: 12.8px;
+  }
 </style>
 </head>
 <body>
+<a class="brand-banner" href="https://rentchek.com/" aria-label="RentChek home">
+  <div class="brand-bar"><p class="wordmark">RentChek&#10003;</p></div>
+  <div class="house-notch"><div class="roof"></div><div class="chimney"></div></div>
+</a>
 <main>
-  <a class="home" href="https://rentchek.com/">&larr; RentChek</a>
-
-  <h1>Privacy Policy for RentChek</h1>
+  <div class="content">
+  <div class="section-heading"><h1>Privacy Policy for RentChek</h1></div>
   <p class="revised">This Policy was last revised on January 17, 2014.</p>
 
   <p>
@@ -307,6 +366,7 @@
     dealings with this website, please contact us at
     <a href="mailto:chesley@rentchek.com">chesley@rentchek.com</a>.
   </p>
+  </div>
 
   <footer>
     <a href="https://rentchek.com/terms">Terms of Service</a>
