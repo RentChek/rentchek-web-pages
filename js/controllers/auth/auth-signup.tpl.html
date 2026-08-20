@@ -2,11 +2,11 @@
 	<section class="container">
 		<h3><span>Sign Up</span></h3>
 		
-		<div class="alert" ng-class="{success: signupCompleted}">You did it! Now you just need to <a href="/app/#!/login">login</a>.</div>
-		<div class="alert" ng-class="{error: status == 409}">That email has already been used. Maybe just <a href="/app/#!/login">try logging in</a>?</div>
+		<div class="alert" ng-class="{success: signupCompleted}">You did it! Now you just need to <a href="/v2/login">login</a>.</div>
+		<div class="alert" ng-class="{error: status == 409}">That email has already been used. Maybe just <a href="/v2/login">try logging in</a>?</div>
 		<div class="alert error" ng-repeat="error in errors">{{error}}</div>
 		
-		<a ng-show="signupCompleted" href="/app/#!/login" class="bigbtn full">Login</a>
+		<a ng-show="signupCompleted" href="/v2/login" class="bigbtn full">Login</a>
 		
 		<form ng-hide="signupCompleted" autofill-submit="signup()">
 			<div class="field">
@@ -34,7 +34,7 @@
 			
 			<div class="actions">
 				<a href="/">Learn more?</a>
-				<a href="/app/#!/login">Already a member?</a>
+				<a href="/v2/login">Already a member?</a>
 				<input class="bigbtn" type="submit" value="Sign Up" ng-disabled="loading" />
 			</div>
 		</form>

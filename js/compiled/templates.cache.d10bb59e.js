@@ -77,7 +77,7 @@ angular.module("templates/controllers/auth/auth-forgot.tpl.html", []).run(["$tem
     "			</div>\n" +
     "			\n" +
     "			<div class=\"actions\">\n" +
-    "				<a href=\"/app/#!/login\">Nevermind, I remember now!</a>\n" +
+    "				<a href=\"/v2/login\">Nevermind, I remember now!</a>\n" +
     "				<input class=\"bigbtn\" type=\"submit\" value=\"Reset\" ng-disabled=\"loading\" />\n" +
     "			</div>\n" +
     "		</form>\n" +
@@ -99,7 +99,7 @@ angular.module("templates/controllers/auth/auth-login.tpl.html", []).run(["$temp
     "			<input autofill ng-model=\"user.password\" placeholder=\"Password\" name=\"password\" type=\"password\" />\n" +
     "			<div class=\"actions\">\n" +
     "				<a href=\"/app/#!/forgot\">Forgot Password?</a>\n" +
-    "				<a href=\"/app/#!/signup\">Not a member yet?</a>\n" +
+    "				<a href=\"/v2/signup\">Not a member yet?</a>\n" +
     "				<input class=\"bigbtn\" type=\"submit\" value=\"Login\" ng-disabled=\"loading\" />\n" +
     "			</div>\n" +
     "		</form>\n" +
@@ -115,14 +115,14 @@ angular.module("templates/controllers/auth/auth-reset.tpl.html", []).run(["$temp
     "	<section class=\"container\">\n" +
     "		<h3><span>Reset</span></h3>\n" +
     "		\n" +
-    "		<div class=\"alert success\" ng-show=\"saved\">Your new password is set. Try <a href=\"/app/#!/login\">logging in</a> using it!</div>\n" +
+    "		<div class=\"alert success\" ng-show=\"saved\">Your new password is set. Try <a href=\"/v2/login\">logging in</a> using it!</div>\n" +
     "		<div class=\"alert error\" ng-repeat=\"error in errors\">{{error}}</div>\n" +
     "		\n" +
     "		<form ng-hide=\"saved\" ng-submit=\"reset()\">\n" +
     "			<input ng-model=\"user.password\" placeholder=\"New Password\" name=\"password\" type=\"password\" autocomplete=\"off\" />\n" +
     "			\n" +
     "			<div class=\"actions\">\n" +
-    "				<a href=\"/app/#!/login\">Nevermind, I remember now!</a>\n" +
+    "				<a href=\"/v2/login\">Nevermind, I remember now!</a>\n" +
     "				<input class=\"bigbtn\" type=\"submit\" value=\"Save\" ng-disabled=\"loading\" />\n" +
     "			</div>\n" +
     "		</form>\n" +
@@ -137,11 +137,11 @@ angular.module("templates/controllers/auth/auth-signup.tpl.html", []).run(["$tem
     "	<section class=\"container\">\n" +
     "		<h3><span>Sign Up</span></h3>\n" +
     "		\n" +
-    "		<div class=\"alert\" ng-class=\"{success: signupCompleted}\">You did it! Now you just need to <a href=\"/app/#!/login\">login</a>.</div>\n" +
-    "		<div class=\"alert\" ng-class=\"{error: status == 409}\">That email has already been used. Maybe just <a href=\"/app/#!/login\">try logging in</a>?</div>\n" +
+    "		<div class=\"alert\" ng-class=\"{success: signupCompleted}\">You did it! Now you just need to <a href=\"/v2/login\">login</a>.</div>\n" +
+    "		<div class=\"alert\" ng-class=\"{error: status == 409}\">That email has already been used. Maybe just <a href=\"/v2/login\">try logging in</a>?</div>\n" +
     "		<div class=\"alert error\" ng-repeat=\"error in errors\">{{error}}</div>\n" +
     "		\n" +
-    "		<a ng-show=\"signupCompleted\" href=\"/app/#!/login\" class=\"bigbtn full\">Login</a>\n" +
+    "		<a ng-show=\"signupCompleted\" href=\"/v2/login\" class=\"bigbtn full\">Login</a>\n" +
     "		\n" +
     "		<form ng-hide=\"signupCompleted\" autofill-submit=\"signup()\">\n" +
     "			<div class=\"field\">\n" +
@@ -169,7 +169,7 @@ angular.module("templates/controllers/auth/auth-signup.tpl.html", []).run(["$tem
     "			\n" +
     "			<div class=\"actions\">\n" +
     "				<a href=\"/\">Learn more?</a>\n" +
-    "				<a href=\"/app/#!/login\">Already a member?</a>\n" +
+    "				<a href=\"/v2/login\">Already a member?</a>\n" +
     "				<input class=\"bigbtn\" type=\"submit\" value=\"Sign Up\" ng-disabled=\"loading\" />\n" +
     "			</div>\n" +
     "		</form>\n" +
@@ -247,8 +247,8 @@ angular.module("templates/controllers/welcome/welcome-acceptableuse.tpl.html", [
     "</article>\n" +
     "\n" +
     "<div class=\"controls\">\n" +
-    "	<a href=\"/app/#!/signup\" class=\"bigbtn\">Sign Up</a>\n" +
-    "	<a href=\"/app/#!/login\" class=\"bigbtn\">Login</a>\n" +
+    "	<a href=\"/v2/signup\" class=\"bigbtn\">Sign Up</a>\n" +
+    "	<a href=\"/v2/login\" class=\"bigbtn\">Login</a>\n" +
     "</div>\n" +
     "");
 }]);
@@ -374,8 +374,8 @@ angular.module("templates/controllers/welcome/welcome-privacy.tpl.html", []).run
     "</article>\n" +
     "\n" +
     "<div class=\"controls\">\n" +
-    "	<a href=\"/app/#!/signup\" class=\"bigbtn\">Sign Up</a>\n" +
-    "	<a href=\"/app/#!/login\" class=\"bigbtn\">Login</a>\n" +
+    "	<a href=\"/v2/signup\" class=\"bigbtn\">Sign Up</a>\n" +
+    "	<a href=\"/v2/login\" class=\"bigbtn\">Login</a>\n" +
     "</div>\n" +
     "");
 }]);
@@ -526,8 +526,8 @@ angular.module("templates/controllers/welcome/welcome-terms.tpl.html", []).run([
     "</article>\n" +
     "\n" +
     "<div class=\"controls\">\n" +
-    "	<a href=\"/app/#!/signup\" class=\"bigbtn\">Sign Up</a>\n" +
-    "	<a href=\"/app/#!/login\" class=\"bigbtn\">Login</a>\n" +
+    "	<a href=\"/v2/signup\" class=\"bigbtn\">Sign Up</a>\n" +
+    "	<a href=\"/v2/login\" class=\"bigbtn\">Login</a>\n" +
     "</div>\n" +
     "");
 }]);
@@ -1210,7 +1210,7 @@ angular.module("templates/directives/share-footer-directive.tpl.html", []).run([
     "<footer>\n" +
     "	<section>\n" +
     "		<p>\n" +
-    "			<a href=\"/app/#!/terms\">Terms of Service</a> / <a href=\"/app/#!/privacy\">Privacy Policy</a> / <a href=\"http://chesleybrown.ca\" target=\"_blank\">chesleybrown.ca</a>\n" +
+    "			<a href=\"/terms\">Terms of Service</a> / <a href=\"/privacy\">Privacy Policy</a> / <a href=\"/acceptableuse\">Acceptable Use Policy</a> / <a href=\"http://chesleybrown.ca\" target=\"_blank\">chesleybrown.ca</a>\n" +
     "		</p>\n" +
     "		<p>\n" +
     "			Icons made by Freepik from <a href=\"https://www.flaticon.com\" target=\"_blank\">www.flaticon.com</a>\n" +
