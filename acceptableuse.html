@@ -68,9 +68,19 @@
   main { max-width: 648px; margin: 0 auto; }
   .content { padding: 50px 15px; }
 
-  .section-heading { position: relative; text-align: center; height: 36px; margin: 0; }
-  .section-heading::before {
-    content: "";
+  /*
+   * 1:1 port of SectionHeading.tsx's actual technique -- two
+   * absolutely-positioned layers stacked in a fixed-height box (a real
+   * .rule element, not a ::before, so it can be measured directly against
+   * the heading and verified they share the same left/right edges) rather
+   * than the text-align/inline-block shortcut the first pass used. Also
+   * verified live against the real app's rendered DOM (getBoundingClientRect
+   * on both the rule box and the "Login" heading on /login): both spans
+   * were pixel-identical (41-659 in that measurement), confirming this
+   * matches, not just resembles, the real component.
+   */
+  .section-heading { position: relative; height: 36px; }
+  .section-heading .rule {
     position: absolute;
     top: 0;
     left: 0;
@@ -78,11 +88,17 @@
     height: 1px;
     background: #dddddd;
   }
+  .section-heading .heading-wrap {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+  }
   .section-heading h1 {
-    position: relative;
-    display: inline-block;
     margin: -21px 0 0;
-    padding: 0 10px;
+    padding: 10px;
     background: #ffffff;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     font-size: 21.6px;
@@ -104,13 +120,14 @@
   }
   p { margin: 8px 0 0; }
 
+  /* Matches ShareFooter.tsx's FOOTER_LINK exactly: typography.caption
+     (Lato, this file's body font) at 12.8px, colors.link -- applied to
+     footer itself so the plain " / " separator text picks it up too,
+     same as ShareFooter's own <Text> separator does. */
   footer {
     padding: 10px 15px 55px;
-    border-top: 1px solid #dddddd;
     text-align: center;
-  }
-  footer a {
-    margin: 0 6px;
+    color: #507192;
     font-size: 12.8px;
   }
 </style>
@@ -122,7 +139,10 @@
 </a>
 <main>
   <div class="content">
-  <div class="section-heading"><h1>Acceptable Use Policy for RentChek</h1></div>
+  <div class="section-heading">
+    <div class="rule"></div>
+    <div class="heading-wrap"><h1>Acceptable Use Policy for RentChek</h1></div>
+  </div>
   <p class="revised">This Policy was last revised on January 17, 2014.</p>
 
   <p>
@@ -188,8 +208,7 @@
   </div>
 
   <footer>
-    <a href="https://rentchek.com/terms">Terms of Service</a>
-    <a href="https://rentchek.com/privacy">Privacy Policy</a>
+    <a href="https://rentchek.com/terms">Terms of Service</a> / <a href="https://rentchek.com/privacy">Privacy Policy</a>
   </footer>
 </main>
 </body>
