@@ -904,7 +904,7 @@ angular.module("templates/directives/share-footer-directive.tpl.html", []).run([
     "<footer>\n" +
     "	<section>\n" +
     "		<p>\n" +
-    "			<a href=\"/terms\">Terms of Service</a> / <a href=\"/privacy\">Privacy Policy</a> / <a href=\"/acceptableuse\">Acceptable Use Policy</a> / <a href=\"http://chesleybrown.ca\" target=\"_blank\">chesleybrown.ca</a>\n" +
+    "			<a href=\"/terms\">Terms of Service</a> / <a href=\"/privacy\">Privacy Policy</a> / <a href=\"/acceptableuse\">Acceptable Use Policy</a> / <a href=\"/support\">Support</a> / <a href=\"http://chesleybrown.ca\" target=\"_blank\">chesleybrown.ca</a>\n" +
     "		</p>\n" +
     "		<p>\n" +
     "			Icons made by Freepik from <a href=\"https://www.flaticon.com\" target=\"_blank\">www.flaticon.com</a>\n" +
