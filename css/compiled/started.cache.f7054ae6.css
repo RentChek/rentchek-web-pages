@@ -579,6 +579,17 @@ body.welcome > .content .site section.feature:nth-child(4):before {
 body.welcome > .content div.controls {
   margin-top: 30px;
 }
+body.welcome p.app-store {
+  margin: 18px 0 0;
+}
+body.welcome p.app-store a {
+  display: inline-block;
+  margin: 0;
+}
+body.welcome p.app-store img {
+  display: block;
+  height: 50px;
+}
 
 /* ==========================================================================
    Media Queries
